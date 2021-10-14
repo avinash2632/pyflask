@@ -21,9 +21,9 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          awsaccesskey:${{ secrets.AWS_ACCESS_KEY_ID}}
-          awssecret:${{ secrets.AWS_SECRET_ACCESS_KEY}}
-          awsregion::${{ secrets.AWSREGION }}
+          AWSACCESSKEY: ${{ secrets.AWSACCESSKEY}}
+          AWSECRET: ${{ secrets.AWSECRET}}
+          AWS_DEFAULT_REGION: us-west-2
       # Step 5
       - name: Build Application and Run unit Test
         run: python app.py & pytest
